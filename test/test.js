@@ -61,20 +61,29 @@ describe('Async exercise', () => {
       }
     );
 
+    it(
+      'the promise should reject if there is an error',
+      done => {
+        http.promiseWebsite() // Using the `request` library with an empty URL generates an error
+          .then(() => done(new Error('The promise is not rejecting')))
+          .catch(() => done());
+      }
+    );
+
   });
 
-  describe('awaitWebsite', () => {
+  describe('awaitUppercaseWebsite', () => {
 
     it(
       'should use an async function',
-      () => http.awaitWebsite.toString().split(' ')[0].should.equal('async')
+      () => http.awaitUppercaseWebsite.toString().split(' ')[0].should.equal('async')
     );
 
     it(
       'should eventually return the website content',
       async () => {
-        const body = await http.awaitWebsite(url);
-        body.should.equal(html);
+        const body = await http.awaitUppercaseWebsite(url);
+        body.should.equal(html.toUpperCase());
       }
     );
 
