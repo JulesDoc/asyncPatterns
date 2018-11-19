@@ -1,4 +1,4 @@
-# Async exercise
+# Async patterns
 
 Time to practice your asynchronous skills in JavaScript!
 
