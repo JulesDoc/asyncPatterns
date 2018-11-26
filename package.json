@@ -1,6 +1,6 @@
 {
   "name": "codeworks-async-patterns-exercise",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Codeworks exercise to train students",
   "main": "index.js",
   "scripts": {
