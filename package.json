@@ -1,31 +1,30 @@
 {
   "name": "codeworks-async-patterns-exercise",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Codeworks exercise to train students",
   "main": "index.js",
   "scripts": {
-    "precommit": "gulp lint",
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codeworksbcn/async-patterns-exercise-master.git"
+    "url": "git+https://github.com/codeworksbcn/async-patterns-exercise.git"
   },
   "author": "Codeworks",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "cz-changelog": "^1.0.1",
-    "del": "^3.0.0",
-    "eslint": "^5.4.0",
-    "eslint-plugin-json": "^1.2.1",
-    "gulp": "^3.9.1",
+    "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-json": "^1.4.0",
+    "gulp": "^4.0.2",
     "gulp-eslint": "^5.0.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-replace": "^1.0.0",
-    "husky": "^0.14.3",
-    "mocha": "^5.2.0",
+    "husky": "^2.3.0",
+    "mocha": "^6.1.4",
     "request": "^2.88.0"
   },
   "config": {
@@ -34,7 +33,12 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/codeworksbcn/async-patterns-exercise-master/issues"
+    "url": "https://github.com/codeworksbcn/async-patterns-exercise/issues"
   },
-  "homepage": "https://github.com/codeworksbcn/async-patterns-exercise-master#readme"
+  "homepage": "https://github.com/codeworksbcn/async-patterns-exercise#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp lint"
+    }
+  }
 }
