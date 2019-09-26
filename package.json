@@ -1,6 +1,6 @@
 {
   "name": "codeworks-async-patterns-exercise",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A Codeworks exercise to train students",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codeworksbcn/async-patterns-exercise.git"
+    "url": "git+https://github.com/codeworks/async-patterns-exercise.git"
   },
   "author": "Codeworks",
   "license": "UNLICENSED",
@@ -33,9 +33,9 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/codeworksbcn/async-patterns-exercise/issues"
+    "url": "https://github.com/codeworks/async-patterns-exercise/issues"
   },
-  "homepage": "https://github.com/codeworksbcn/async-patterns-exercise#readme",
+  "homepage": "https://github.com/codeworks/async-patterns-exercise#readme",
   "husky": {
     "hooks": {
       "pre-commit": "gulp lint"
