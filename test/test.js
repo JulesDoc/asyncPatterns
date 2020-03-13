@@ -1,36 +1,35 @@
 'use strict';
 
 require('chai').should();
-const request = require('request');
-
+const needle = require('needle');
 const http = require('./../index.js');
 
 const url = 'http://quotes.stormconsultancy.co.uk/quotes/3.json';
 
-let html;
+let response;
 
 describe('Async exercise', () => {
 
   before(
-    'set up the HTML reference',
-    done => request(url, (err, res, body) => {
+    'set up the quote reference',
+    done => needle.get(url, (err, res) => {
       if (err) done(err);
       else {
-        html = body;
+        response = res.body;
         done();
       }
     })
   );
 
-  describe('getWebsite', () => {
+  describe('getQuote', () => {
 
     it(
-      'should get a website and pass the error or result to its callee',
-      done => http.getWebsite(url, (err, body) => {
+      'should get a quote and pass the error or result to its callee',
+      done => http.getQuote(url, (err, body) => {
         if (err) done(err);
         else {
           try {
-            body.should.equal(html);
+            body.should.eql(response);
             done();
           } catch (e) {
             done(e);
@@ -41,30 +40,30 @@ describe('Async exercise', () => {
 
   });
 
-  describe('promiseWebsite', () => {
+  describe('promiseQuote', () => {
 
     it(
       'should use a regular function',
-      () => http.promiseWebsite.toString().split(' ')[0].should.equal('function')
+      () => http.promiseQuote.toString().split(' ')[0].should.equal('function')
     );
 
     it(
       'this function should return a promise',
-      () => http.promiseWebsite(url).should.be.a('promise')
+      () => http.promiseQuote(url).should.be.a('promise')
     );
 
     it(
-      'the promise should eventually be fulfilled with the website content',
+      'the promise should eventually be fulfilled with the quote content',
       async () => {
-        const body = await http.promiseWebsite(url);
-        body.should.equal(html);
+        const body = await http.promiseQuote(url);
+        body.should.eql(response);
       }
     );
 
     it(
       'the promise should reject if there is an error',
       done => {
-        http.promiseWebsite() // Using the `request` library with an empty URL generates an error
+        http.promiseQuote()
           .then(() => done(new Error('The promise is not rejecting')))
           .catch(() => done());
       }
@@ -72,18 +71,18 @@ describe('Async exercise', () => {
 
   });
 
-  describe('awaitUppercaseWebsite', () => {
+  describe('awaitUppercaseQuote', () => {
 
     it(
       'should use an async function',
-      () => http.awaitUppercaseWebsite.toString().split(' ')[0].should.equal('async')
+      () => http.awaitUppercaseQuote.toString().split(' ')[0].should.equal('async')
     );
 
     it(
-      'should eventually return the website content',
+      'should eventually return the quote content',
       async () => {
-        const body = await http.awaitUppercaseWebsite(url);
-        body.should.equal(html.toUpperCase());
+        const body = await http.awaitUppercaseQuote(url);
+        body.should.equal(response.quote.toUpperCase());
       }
     );
 
