@@ -1,6 +1,6 @@
 {
   "name": "codeworks-async-patterns-exercise",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A Codeworks exercise to train students",
   "main": "index.js",
   "scripts": {
@@ -14,18 +14,18 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "cz-changelog": "^1.0.1",
-    "del": "^4.1.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-json": "^1.4.0",
+    "del": "^6.0.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-json": "^3.0.0",
     "gulp": "^4.0.2",
-    "gulp-eslint": "^5.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-replace": "^1.0.0",
-    "husky": "^2.3.0",
-    "mocha": "^6.1.4",
-    "needle": "^2.3.3"
+    "gulp-eslint": "^6.0.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "husky": "^6.0.0",
+    "mocha": "^9.0.0",
+    "needle": "^2.6.0"
   },
   "config": {
     "commitizen": {
