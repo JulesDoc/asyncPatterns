@@ -42,7 +42,7 @@ function promiseQuote (someUrl) {
 async function awaitUppercaseQuote (someUrl) {
   console.log('calling');
   const result = await promiseQuote(someUrl);
-  console.log(result);
+  console.log(result.toUpperCase());
 }
 
 awaitUppercaseQuote('http://www.google.com');
